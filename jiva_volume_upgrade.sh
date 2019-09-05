@@ -1,5 +1,4 @@
 #!/bin/bash
-# 
 
 read -p "Please give the list of jiva volume to be upgraded: " list
 

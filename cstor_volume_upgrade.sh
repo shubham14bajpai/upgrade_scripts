@@ -1,6 +1,4 @@
 #!/bin/bash
-# 
-label="shubham"
 
 read -p "Please give the list of cstor volume to be upgraded: " list
 
