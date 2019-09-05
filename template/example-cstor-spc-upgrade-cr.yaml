@@ -1,0 +1,18 @@
+apiVersion: openebs.io/v1alpha1
+kind: UpgradeTask
+metadata:
+  name: upgrade-cstor-spc-@spc_name@
+  namespace: openebs
+  labels:
+    resource: cstorSPC
+spec:
+  fromVersion: 1.1.0
+  imagePrefix: ""
+  imageTag: ""
+  storagePoolClaim:
+    spcName: @spc_name@
+  toVersion: 1.2.0-RC1
+status:
+  completedTime: null
+  retries: 0
+  startTime: null

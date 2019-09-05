@@ -1,0 +1,44 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  # VERIFY that you have provided a unique name for this upgrade job.
+  # The name can be any valid K8s string for name. This example uses
+  # the following convention: jiva-vol-<flattened-from-to-versions>-<pv-name>
+  name: @job_name@
+  
+  # VERIFY the value of namespace is same as the namespace where openebs components
+  # are installed. You can verify using the command:
+  # `kubectl get pods -n <openebs-namespace> -l openebs.io/component-name=maya-apiserver`
+  # The above command should return status of the openebs-apiserver.
+  namespace: openebs
+
+spec:
+  template:
+    spec:
+      
+      # VERIFY the value of serviceAccountName is pointing to service account
+      # created within openebs namespace. Use the non-default account.
+      # by running `kubectl get sa -n <openebs-namespace>`
+      serviceAccountName: openebs-maya-operator 
+      containers:
+      - name:  upgrade
+        args:
+        - "resource"
+        
+        # Following are optional parameters
+        # Log Level
+        - "--v=4"
+        
+        env:
+        - name: OPENEBS_NAMESPACE
+          value: "openebs"
+        - name: UPGRADE_TASK_LABEL
+          value: "@label@"
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        tty: true 
+        image: shubham1494/m-upgrade:dev 
+        imagePullPolicy: Always
+      restartPolicy: OnFailure 

@@ -1,0 +1,18 @@
+apiVersion: openebs.io/v1alpha1
+kind: UpgradeTask
+metadata:
+  name: upgrade-jiva-volume-@vol_name@
+  namespace: openebs
+  labels:
+    resource: jivaVolume
+spec:
+  fromVersion: 1.1.0
+  imagePrefix: ""
+  imageTag: ""
+  jivaVolume:
+    pvName: @vol_name@
+  toVersion: 1.2.0-RC1
+status:
+  completedTime: null
+  retries: 0
+  startTime: null
