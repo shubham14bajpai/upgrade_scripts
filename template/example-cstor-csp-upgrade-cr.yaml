@@ -1,16 +1,16 @@
 apiVersion: openebs.io/v1alpha1
 kind: UpgradeTask
 metadata:
-  name: upgrade-cstor-volume-@vol_name@
+  name: upgrade-cstor-pool-@csp_name@
   namespace: openebs
   labels:
-    resource: cstorVolume
+    resource: cstorCSP
 spec:
   fromVersion: 1.2.0
   imagePrefix: "openebs/"
   imageTag: "ci"
-  cstorVolume:
-    pvName: @vol_name@
+  cstorPool:
+    poolName: @csp_name@
   toVersion: 1.3.0-RC2
 status:
   completedTime: null

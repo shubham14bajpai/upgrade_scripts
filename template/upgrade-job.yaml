@@ -39,6 +39,6 @@ spec:
             fieldRef:
               fieldPath: metadata.name
         tty: true 
-        image: shubham1494/m-upgrade:dev 
-        imagePullPolicy: Always
+        image: openebs/m-upgrade:ci
+        imagePullPolicy: IfNotPresent
       restartPolicy: OnFailure 
