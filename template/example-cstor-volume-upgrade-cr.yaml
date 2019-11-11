@@ -4,14 +4,14 @@ metadata:
   name: upgrade-cstor-volume-@vol_name@
   namespace: openebs
   labels:
-    resource: cstorVolume
+    resource: @label@
 spec:
-  fromVersion: 1.2.0
+  fromVersion: @from@
   imagePrefix: "openebs/"
   imageTag: "ci"
   cstorVolume:
     pvName: @vol_name@
-  toVersion: 1.3.0-RC2
+  toVersion: @to@
 status:
   completedTime: null
   retries: 0

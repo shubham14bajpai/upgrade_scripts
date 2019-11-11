@@ -4,7 +4,7 @@ metadata:
   # VERIFY that you have provided a unique name for this upgrade job.
   # The name can be any valid K8s string for name. This example uses
   # the following convention: jiva-vol-<flattened-from-to-versions>-<pv-name>
-  name: @job_name@
+  generateName: @job_name@-
   
   # VERIFY the value of namespace is same as the namespace where openebs components
   # are installed. You can verify using the command:
