@@ -4,6 +4,8 @@ The scripts help automate the process of upgrading multiple resources in one job
 The script first creates UpgradeTask CR for each resource and then launches a job to upgrade all of them.
 The fields and labels for the resource UpgradeTask CR are hard coded for now.  
 
+**Note: Make sure the image-prefix and image-tags are empty if you don't want any custom images**
+
 ## Example
 ```
 ./cstor_volume_upgrade.sh 
