@@ -7,8 +7,8 @@ metadata:
     resource: @label@
 spec:
   fromVersion: @from@
-  imagePrefix: "openebs/"
-  imageTag: "ci"
+  imagePrefix: ""
+  imageTag: ""
   cstorVolume:
     pvName: @vol_name@
   toVersion: @to@
